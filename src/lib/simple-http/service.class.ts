@@ -3,6 +3,7 @@ import SimpleHttpService  from "lib/simple-http/service.type";
 import * as fs            from "fs";
 import * as http          from "http";
 import * as path          from "path";
+import * as url           from "url";
 
 class StandardSimpleHttpService implements SimpleHttpService
 {
@@ -29,9 +30,15 @@ class StandardSimpleHttpService implements SimpleHttpService
       response  : http.ServerResponse
     ) =>
     {
-      let file = documentRoot + request.url;
+      let file = documentRoot + url.parse(request.url).pathname;
 
-      if (fs.existsSync(file))
+      if (fs.existsSync(file + "/index.html"))
+      {
+        response.end(
+          fs.readFileSync(file + "/index.html")
+        );
+      }
+      else if (fs.existsSync(file) && fs.statSync(file).isFile())
       {
         response.end(
           fs.readFileSync(file)
