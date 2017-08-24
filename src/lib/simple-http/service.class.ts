@@ -12,9 +12,22 @@ class StandardSimpleHttpService implements SimpleHttpService
   {
     return http.createServer((
       request   : http.IncomingMessage,
-      response  : http.ServerResponse) =>
+      response  : http.ServerResponse
+    ) =>
     {
-      response.end("Hello, world!");
+      let file = documentRoot + request.url;
+
+      if (fs.existsSync(file))
+      {
+        response.end(
+          fs.readFileSync(file)
+        );
+      }
+      else
+      {
+        response.writeHead(404);
+        response.end();
+      }
     });
   }
 }
