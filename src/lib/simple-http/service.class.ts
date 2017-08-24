@@ -10,7 +10,19 @@ class StandardSimpleHttpService implements SimpleHttpService
     documentRoot: string
   ): http.Server
   {
-    documentRoot = path.normalize(documentRoot);
+    if (fs.statSync(documentRoot).isDirectory())
+    {
+      documentRoot = path.normalize(documentRoot);
+
+      if (documentRoot.endsWith("/"))
+      {
+        documentRoot = documentRoot.slice(0, -1);
+      }
+    }
+    else
+    {
+      throw new Error("'documentRoot' must be a directory");
+    }
 
     return http.createServer((
       request   : http.IncomingMessage,
