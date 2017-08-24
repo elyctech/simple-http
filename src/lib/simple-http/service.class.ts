@@ -30,7 +30,7 @@ class StandardSimpleHttpService implements SimpleHttpService
       response  : http.ServerResponse
     ) =>
     {
-      let file = documentRoot + url.parse(request.url).pathname;
+      let file    = documentRoot + url.parse(request.url).pathname;
 
       if (fs.existsSync(file + "/index.html"))
       {
