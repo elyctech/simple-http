@@ -10,6 +10,8 @@ class StandardSimpleHttpService implements SimpleHttpService
     documentRoot: string
   ): http.Server
   {
+    documentRoot = path.normalize(documentRoot);
+
     return http.createServer((
       request   : http.IncomingMessage,
       response  : http.ServerResponse
