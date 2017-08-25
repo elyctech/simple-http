@@ -11,7 +11,7 @@ class StandardSimpleHttpService implements SimpleHttpService
     documentRoot: string
   ): http.Server
   {
-    if (fs.statSync(documentRoot).isDirectory())
+    if (fs.existsSync(documentRoot) && fs.statSync(documentRoot).isDirectory())
     {
       documentRoot = path.normalize(documentRoot);
 
@@ -22,7 +22,7 @@ class StandardSimpleHttpService implements SimpleHttpService
     }
     else
     {
-      throw new Error("'documentRoot' must be a directory");
+      throw new Error("Invalid document root: '" + documentRoot + "' is not a directory");
     }
 
     return http.createServer((
