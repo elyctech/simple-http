@@ -9,6 +9,9 @@
   "scripts": {
     "install": "gulp"
   },
+  "bin": {
+    "simplehttpserver": "./bin/server.js"
+  },
   "devDependencies": {
     "@types/node": "^4.2.0",
     "babel-core": "^6.26.0",
