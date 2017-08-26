@@ -1,16 +1,16 @@
 {
-  "name": "simple-http",
+  "name": "websy",
   "version": "0.1.0",
   "description": "HTTP made easy.",
   "main": "index.js",
-  "repository": "http://github.com/elyctech/simple-http",
+  "repository": "http://github.com/elyctech/websy",
   "author": "Cyle Ven Dawson <dawsonc623@gmail.com>",
   "license": "MIT",
   "scripts": {
     "install": "gulp"
   },
   "bin": {
-    "simplehttpserver": "./bin/server.js"
+    "lwhttp-server": "./bin/server.js"
   },
   "devDependencies": {
     "@types/node": "^4.2.0",
