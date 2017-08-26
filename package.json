@@ -7,7 +7,7 @@
   "author": "Cyle Ven Dawson <dawsonc623@gmail.com>",
   "license": "MIT",
   "bin": {
-    "websy": "./bin/server.js"
+    "websy-server": "./bin/server.js"
   },
   "devDependencies": {
     "@types/node": "^4.2.0",

@@ -9,7 +9,7 @@ const documentRoot  = process.argv[2],
 
 simpleHttp.createServer(documentRoot).listen(serverPort, () =>
 {
-  console.log("SimpleHTTP Server is running.");
+  console.log("Websy Server is running.");
   console.log("  Document Root :", documentRoot);
   console.log("  Server Port   :", serverPort);
 });
