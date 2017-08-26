@@ -6,9 +6,6 @@
   "repository": "http://github.com/elyctech/websy",
   "author": "Cyle Ven Dawson <dawsonc623@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "install": "gulp"
-  },
   "bin": {
     "websy": "./bin/server.js"
   },
