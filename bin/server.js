@@ -7,7 +7,6 @@ const simpleHttp = require("../index");
 const documentRoot  = process.argv[2],
       serverPort    = process.argv[3];
 
-// TODO this should not be index
 simpleHttp.createServer(documentRoot).listen(serverPort, () =>
 {
   console.log("SimpleHTTP Server is running.");
