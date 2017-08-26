@@ -10,7 +10,7 @@
     "install": "gulp"
   },
   "bin": {
-    "lwhttp-server": "./bin/server.js"
+    "websy": "./bin/server.js"
   },
   "devDependencies": {
     "@types/node": "^4.2.0",
