@@ -23,7 +23,6 @@
     "typescript": "^2.4.2"
   },
   "dependencies": {
-    "app-module-path": "^2.2.0",
-    "mmmagic": "^0.4.5"
+    "app-module-path": "^2.2.0"
   }
 }
